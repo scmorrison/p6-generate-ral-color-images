@@ -28,11 +28,11 @@ while (my @row = $csv.getline($fh)) {
 	# Save image
   $ral_image.write: 'images/' ~ $ral.split(' ')[1] ~ '-1x1.png';
   # Prepare row for output CSV
-  my $title = "$ral\n$français\n$english";
+  my $title = "$ral\<br />$français\<br />$english";
   my $value = $ral;
-	my $thumbnail = ""
+	my $thumbnail = "https://raw.githubusercontent.com/scmorrison/p6-generate-ral-color-images/master/images/" ~ $ral.split(' ')[1]~ "-1x1.png";
   # Print row
-  say "$ral, $ral_rgb, $ral_hex, $deutsch, $english, $français, $español, $italian, $nederlands";
+  say "$title,$value,$thumbnail,50,50,,$sort";
   $sort++;
 }
 
